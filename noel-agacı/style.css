@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2b3a67;
+}
+.tree-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-image: url('agac.png');
+    background-size: cover;
+    background-position: center;
+}
+.star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: gold;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite;
+}
+.star.hidden {
+    background-color: gray;
+    animation: none;
+}
+.star:nth-child(1) {
+    top: 10px;
+    left: 135px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    animation: sparkle 2s infinite;
+    z-index: -1;
+}
+.star:nth-child(2) { top: 100px; left: 120px; }
+.star:nth-child(3) { top: 140px; left: 180px; }
+.star:nth-child(4) { top: 200px; left: 90px; }
+.star:nth-child(5) { top: 260px; left: 145px; }
+.star:nth-child(6) { top: 290px; left: 60px; }
+.star:nth-child(7) { top: 210px; left: 200px; }
+.star:nth-child(8) { top: 290px; left: 230px; }
+
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px gold, 0 0 20px gold;
+    }
+    50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 15px gold, 0 0 30px gold;
+    }
+}
+
+.button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ffaa00;
+}
+.message-container {
+    margin-top: 20px;
+    text-align: center;
+}
+.message {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
